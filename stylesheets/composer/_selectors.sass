@@ -1,0 +1,13 @@
+// This file generates the actual selectors that correspond with the
+// composer_content rendering. To use different base class names, override
+// the settings here, and provide the desired class name argument to the
+// composer_content render function.
+
+
+$embed_base_class   : 'EmbedBlock'  !default
+$image_base_class   : 'ImageBlock'  !default
+$text_base_class    : 'TextBlock'   !default
+
+@each $class in $embed_base_class, $image_base_class, $text_base_class
+    .#{ $class }
+        @extend %#{ $class }
