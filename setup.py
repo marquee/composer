@@ -13,7 +13,7 @@ setup(
         zip_safe            = False,
         keywords            = '',
         install_requires    = ['content'],
-        dependency_links    = ['http://github.com/marquee/py-content/tarball/master#egg=content-dev'],
+        dependency_links    = ['http://github.com/marquee/content/tarball/master#egg=content-dev'],
         package_data        = {
             'droptype-composer': ['../stylesheets/*'],
         },
