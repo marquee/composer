@@ -5,7 +5,7 @@ setup(
         version             = 'dev',
         description         = '',
         long_description    = file('README.md').read(),
-        url                 = 'https://github.com/droptype/composer',
+        url                 = 'https://github.com/marquee/composer',
         author              = 'Alec Perkins',
         author_email        = 'alec@droptype.com',
         license             = 'UNLICENSE',
@@ -13,7 +13,7 @@ setup(
         zip_safe            = False,
         keywords            = '',
         install_requires    = ['content'],
-        dependency_links    = ['http://github.com/droptype/content/tarball/master#egg=content-dev'],
+        dependency_links    = ['http://github.com/marquee/py-content/tarball/master#egg=content-dev'],
         package_data        = {
             'droptype-composer': ['../stylesheets/*'],
         },
