@@ -84,6 +84,8 @@ def renderBlock(block, classes=None, attrs=None, base_class_name=None):
 
 
 def _pickImageSrc(block):
+    if block.get('layout', {}).get('size') == 'large':
+        return block.content.get('1280', {}).get('url')
     return block.content.get('640', {}).get('url')
 
 def _pickTag(block):
