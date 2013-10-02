@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
         name                = 'droptype-composer',
-        version             = '0.1.dev',
+        version             = '0.2.dev',
         description         = '',
         long_description    = file('README.md').read(),
         url                 = 'https://github.com/marquee/composer',
