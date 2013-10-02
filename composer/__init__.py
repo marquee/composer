@@ -31,8 +31,12 @@ def renderBlock(block, classes=None, attrs=None, base_class_name=None):
     block_template = u"<{tag} class='{classes}' {attrs}>{content}</{tag}>"
 
     if block.type == Image.type:
+        src = _pickImageSrc(block)
+        alt = _getCaption(block, as_html=False)
+        if alt == '':
+            alt = src
         content = u'<div class="content">'
-        content += u"<img src='{0}'>".format(_pickImageSrc(block))
+        content += u"<img src='{0}' alt='{1}'>".format(src, alt)
         content += _getCaption(block)
         content += '</div>'
     elif block.type == Text.type:
@@ -102,11 +106,14 @@ def _pickTag(block):
 def _renderBlockContent(block):
     return block.toHTML()
 
-def _getCaption(block):
+def _getCaption(block, as_html=True):
     annotations = block.get('annotations', [])
     if annotations:
         caption = filter(lambda a: 'caption' == a['type'], annotations)
         if caption:
             caption = caption[0]
-            return u"<div class='Caption'>%s</div>" % (escape(caption['content']),)
+            if as_html:
+                return u"<div class='Caption'>%s</div>" % (escape(caption['content']),)
+            else:
+                return escape(caption['content'])
     return u''
