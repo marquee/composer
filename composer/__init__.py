@@ -1,6 +1,8 @@
 from content import Text, Image, Embed, Container
 from cgi import escape
 
+import urlparse
+
 default_base_class_names = {
     Text.type   : 'TextBlock',
     Image.type  : 'ImageBlock',
@@ -32,9 +34,9 @@ def renderBlock(block, classes=None, attrs=None, base_class_name=None):
 
     if block.type == Image.type:
         src = _pickImageSrc(block)
-        alt = _getCaption(block, as_html=False)
+        alt = _getCaption(block, as_html=False) # TODO use
         if alt == '':
-            alt = src
+            alt = urlparse.urlsplit(src).path.split('/')[-1]
         content = u'<div class="content">'
         content += u"<img src='{0}' alt='{1}'>".format(src, alt)
         content += _getCaption(block)
