@@ -34,7 +34,8 @@ def renderBlock(block, classes=None, attrs=None, base_class_name=None):
 
     if block.type == Image.type:
         src = _pickImageSrc(block)
-        alt = _getCaption(block, as_html=False) # TODO use
+        # TODO use alt text from content object eventually
+        alt = _getCaption(block, as_html=False)
         if alt == '':
             alt = urlparse.urlsplit(src).path.split('/')[-1]
         content = u'<div class="content">'
