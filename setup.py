@@ -1,13 +1,13 @@
 from setuptools import setup
 
 setup(
-        name                = 'droptype-composer',
+        name                = 'marquee-composer',
         version             = '0.2.1',
         description         = '',
         long_description    = file('README.md').read(),
         url                 = 'https://github.com/marquee/composer',
         author              = 'Alec Perkins',
-        author_email        = 'alec@droptype.com',
+        author_email        = 'alec@marquee.com',
         license             = 'UNLICENSE',
         packages            = ['composer'],
         zip_safe            = False,
