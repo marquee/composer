@@ -36,7 +36,7 @@ def renderBlock(block, classes=None, attrs=None, base_class_name=None):
         src = _pickImageSrc(block)
         # TODO use alt text from content object eventually
         alt = _getCaption(block, as_html=False)
-        if alt == '':
+        if alt == '' and src is not None:
             alt = urlparse.urlsplit(src).path.split('/')[-1]
         content = u'<div class="content">'
         content += u"<img src='{0}' alt='{1}'>".format(src, alt)
