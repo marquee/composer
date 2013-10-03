@@ -38,10 +38,16 @@ def renderBlock(block, classes=None, attrs=None, base_class_name=None):
         alt = _getCaption(block, as_html=False)
         if alt == '' and src is not None:
             alt = urlparse.urlsplit(src).path.split('/')[-1]
-        content = u'<div class="content">'
+        if block.get('link_to'):
+            content_tag = 'a'
+            content_attrs = "href='{0}'".format(escape(block.get('link_to')))
+        else:
+            content_tag = 'div'
+            content_attrs = ''
+        content = u"<{0} class='content' {1}>".format(content_tag, content_attrs)
         content += u"<img src='{0}' alt='{1}'>".format(src, alt)
         content += _getCaption(block)
-        content += '</div>'
+        content += u"</{0}>".format(content_tag)
     elif block.type == Text.type:
         content = _renderBlockContent(block)
     elif block.type == Embed.type:

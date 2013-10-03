@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
         name                = 'marquee-composer',
-        version             = '0.2.1',
+        version             = '0.2.2-dev',
         description         = '',
         long_description    = file('README.md').read(),
         url                 = 'https://github.com/marquee/composer',
