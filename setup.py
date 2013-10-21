@@ -7,7 +7,7 @@ setup(
         long_description    = file('README.md').read(),
         url                 = 'https://github.com/marquee/composer',
         author              = 'Alec Perkins',
-        author_email        = 'alec@marquee.com',
+        author_email        = 'alec@marquee.by',
         license             = 'UNLICENSE',
         packages            = ['composer'],
         zip_safe            = False,
