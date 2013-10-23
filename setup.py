@@ -12,8 +12,10 @@ setup(
         packages            = ['composer'],
         zip_safe            = False,
         keywords            = '',
-        install_requires    = ['content'],
-        dependency_links    = ['http://github.com/marquee/content/tarball/master#egg=content-dev'],
+        install_requires    = ['content==0.1.0'],
+        dependency_links    = [
+            'git+ssh://git@github.com/marquee/content@v0.1.0-alpha#egg=content-0.1.0',
+        ],
         package_data        = {
             'droptype-composer': ['../stylesheets/*'],
         },
