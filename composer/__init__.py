@@ -35,7 +35,9 @@ def renderBlock(block, classes=None, attrs=None, base_class_name=None):
     if block.type == Image.type:
         src = _pickImageSrc(block)
         # TODO use alt text from content object eventually
-        alt = _getCaption(block, as_html=False)
+        alt = block.get("alt_text", None)
+        if not alt:
+            alt = _getCaption(block, as_html=False)
         if alt == '' and src is not None:
             alt = urlparse.urlsplit(src).path.split('/')[-1]
         if block.get('link_to'):

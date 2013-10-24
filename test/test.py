@@ -44,6 +44,7 @@ sample_data = [
     },
     {
         'id': 'image:1234',
+        'alt_text' : "alt text",
         'type': 'image',
         'content': {
             '640': {
