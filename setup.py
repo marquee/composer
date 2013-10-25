@@ -14,7 +14,7 @@ setup(
         keywords            = '',
         install_requires    = ['content==0.1.0'],
         dependency_links    = [
-            'git://github.com/marquee/content@v0.1.0-alpha#egg=content-0.1.0',
+            'git+https://github.com/marquee/content@v0.1.0-alpha#egg=content-0.1.0',
         ],
         package_data        = {
             'droptype-composer': ['../stylesheets/*'],
