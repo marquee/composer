@@ -23,7 +23,7 @@ def renderBlock(block, classes=None, attrs=None, base_class_name=None):
     attrs['data-content_id'] = block.id
     classes.append(base_class_name)
 
-    for prop, val in block.layout.items():
+    for prop, val in block.get('layout', {}).items():
         attrs[u"data-" + prop] = val
 
     if block.get('role'):
