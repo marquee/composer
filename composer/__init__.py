@@ -11,7 +11,6 @@ default_base_class_names = {
 
 # Override base_class_name to use different selectors
 def renderBlock(block, classes=None, attrs=None, base_class_name=None):
-    print block.toJSON()
     # because classes=[] in the sig is bad
     if not classes:
         classes = []
