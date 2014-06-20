@@ -12,9 +12,9 @@ setup(
         packages            = ['composer'],
         zip_safe            = False,
         keywords            = '',
-        install_requires    = ['content==0.1.2'],
+        install_requires    = ['content'],
         dependency_links    = [
-            'git+git://github.com/marquee/content.git@v0.1.2#egg=content',
+            'git+git://github.com/marquee/content.git@master#egg=content',
         ],
         package_data        = {
             'droptype-composer': ['../stylesheets/*'],
