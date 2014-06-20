@@ -14,7 +14,7 @@ setup(
         keywords            = '',
         install_requires    = ['content==0.1.2'],
         dependency_links    = [
-            'http://github.com/marquee/content/tarball/master#egg=content-0.1.2',
+            'git+git://github.com/marquee/content.git@v0.1.2#egg=content',
         ],
         package_data        = {
             'droptype-composer': ['../stylesheets/*'],
